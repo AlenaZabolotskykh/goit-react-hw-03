@@ -18,6 +18,7 @@ const getSavedContacts = () => {
 
 export default function App() {
   const [contacts, setContacts] = useState(getSavedContacts);
+  const [filter, setFilter] = useState("");
 
   useEffect(() => {
     window.localStorage.setItem("save-contacts", JSON.stringify(contacts));
@@ -35,12 +36,16 @@ export default function App() {
     });
   };
 
+  const visibleContacts = contacts.filter((contact) =>
+    contact.name.toLowerCase().includes(filter.toLowerCase())
+  );
+
   return (
     <>
       <h1>Form</h1>
       <ContactForm onAdd={addContact} />
-      <SearchBox />
-      <ContactList contacts={contacts} onDelete={deleteContacts} />
+      <SearchBox value={filter} onFilter={setFilter} />
+      <ContactList contacts={visibleContacts} onDelete={deleteContacts} />
     </>
   );
 }
