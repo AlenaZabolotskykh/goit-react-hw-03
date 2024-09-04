@@ -29,12 +29,18 @@ export default function App() {
     });
   };
 
+  const deleteContacts = (contactId) => {
+    setContacts((prevContacts) => {
+      return prevContacts.filter((contact) => contact.id != contactId);
+    });
+  };
+
   return (
     <>
       <h1>Form</h1>
       <ContactForm onAdd={addContact} />
       <SearchBox />
-      <ContactList contacts={contacts} />
+      <ContactList contacts={contacts} onDelete={deleteContacts} />
     </>
   );
 }
