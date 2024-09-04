@@ -42,7 +42,7 @@ export default function App() {
 
   return (
     <>
-      <h1>Form</h1>
+      <h1>Phonebook</h1>
       <ContactForm onAdd={addContact} />
       <SearchBox value={filter} onFilter={setFilter} />
       <ContactList contacts={visibleContacts} onDelete={deleteContacts} />
