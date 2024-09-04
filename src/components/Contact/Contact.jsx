@@ -4,6 +4,7 @@ export default function Contact({ contact }) {
       <p>{contact.id}</p>
       <p>{contact.name}</p>
       <p>{contact.number}</p>
+      <button>Delete</button>
     </div>
   );
 }

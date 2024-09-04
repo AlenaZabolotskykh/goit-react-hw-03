@@ -13,10 +13,17 @@ const initialContacts = [
 
 export default function App() {
   const [contacts, setContacts] = useState(initialContacts);
+
+  const addContact = (newContact) => {
+    setContacts((prevContacts) => {
+      return [...prevContacts, newContact];
+    });
+  };
+
   return (
     <>
       <h1>Form</h1>
-      <ContactForm />
+      <ContactForm onAdd={addContact} />
       <SearchBox />
       <ContactList contacts={contacts} />
     </>
