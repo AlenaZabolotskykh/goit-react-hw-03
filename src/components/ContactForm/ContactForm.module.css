@@ -1,9 +1,9 @@
 .form {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 10px;
   max-width: 400px;
-  padding: 8px;
+  padding: 10px;
   border: 1px solid black;
 }
 
@@ -23,5 +23,5 @@
 }
 
 .button {
-  border: solid 1px gray;
+  border: solid 2px gray;
 }
